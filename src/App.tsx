@@ -1,0 +1,286 @@
+import { Instagram, Facebook, MapPin, Phone, Mail, Navigation, CarFront } from 'lucide-react';
+
+function App() {
+  return (
+    <div className="min-h-screen bg-white text-deep-black font-sans scroll-smooth">
+      {/* Navbar */}
+      <header className="fixed w-full top-0 bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 flex items-center justify-between px-6 py-4 shadow-sm">
+        <div className="flex items-center gap-2">
+          <div className="font-bold text-3xl tracking-tighter flex items-center gap-1 group cursor-pointer">
+            <span className="text-deep-black group-hover:text-dark-grey transition-colors">FCG</span>
+            <div className="w-2 h-2 bg-primary-red self-end mb-1.5" />
+          </div>
+          <span className="ml-2 pl-2 border-l-2 border-primary-red text-sm font-semibold tracking-widest text-dark-grey uppercase">
+            Suzuki La Florida
+          </span>
+        </div>
+        
+        <nav className="hidden md:flex items-center gap-8 font-semibold text-sm tracking-wide">
+          <a href="#inicio" className="hover:text-primary-red transition-all duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-primary-red hover:after:w-full after:transition-all after:duration-300">Inicio</a>
+          <a href="#modelos" className="hover:text-primary-red transition-all duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-primary-red hover:after:w-full after:transition-all after:duration-300">Modelos</a>
+          <a href="#servicios" className="hover:text-primary-red transition-all duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-primary-red hover:after:w-full after:transition-all after:duration-300">Servicios</a>
+          <a href="#contacto" className="hover:text-primary-red transition-all duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-primary-red hover:after:w-full after:transition-all after:duration-300">Contacto</a>
+        </nav>
+
+        <div className="flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-3 mr-4 text-dark-grey">
+            <a href="https://www.instagram.com/suzukilaflorida/" target="_blank" rel="noreferrer" className="hover:text-primary-red transition-colors"><Instagram size={20} /></a>
+            <a href="https://www.tiktok.com/@suzuki.la.florida" target="_blank" rel="noreferrer" className="hover:text-primary-red transition-colors">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+            </a>
+            <a href="https://www.facebook.com/p/Suzuki-La-Florida-61573582777619/" target="_blank" rel="noreferrer" className="hover:text-primary-red transition-colors"><Facebook size={20} /></a>
+          </div>
+          <a href="#contacto" className="bg-primary-red text-white px-6 py-2.5 rounded-sm font-bold text-sm hover:bg-red-700 hover:shadow-lg hover:shadow-primary-red/20 transition-all flex items-center gap-2">
+            Cotizar <Navigation size={16} />
+          </a>
+        </div>
+      </header>
+
+      <main>
+        {/* Hero Section */}
+        <section id="inicio" className="relative h-[90vh] flex items-center justify-center bg-deep-black pt-20 overflow-hidden">
+          {/* Background image placeholder */}
+          <div className="absolute inset-0 opacity-40 mix-blend-overlay">
+            <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=2070&auto=format&fit=crop" alt="Suzuki Cars" className="w-full h-full object-cover" />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-deep-black via-deep-black/50 to-transparent" />
+          
+          <div className="container relative mx-auto px-6 flex flex-col items-center text-center z-10 mt-16">
+            <div className="inline-block border border-white/20 px-4 py-1.5 rounded-full mb-6 backdrop-blur-md">
+              <span className="text-white text-xs font-bold tracking-widest uppercase">Finest Cars Group</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-8xl font-black text-white mb-6 tracking-tighter leading-tight drop-shadow-xl">
+              POTENCIA <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-red to-red-500">SUZUKI</span><br/> EN CARACAS.
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-light-grey mb-12 max-w-3xl mx-auto font-light leading-relaxed drop-shadow-md">
+              Descubre nuestra línea exclusiva de vehículos y experimenta la verdadera aventura. Tu viaje comienza en La Florida.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#modelos" className="bg-primary-red text-white text-lg px-8 py-4 rounded-sm font-bold shadow-xl shadow-primary-red/30 hover:bg-white hover:text-primary-red transition-all duration-300 flex items-center justify-center gap-3">
+                <CarFront size={22} />
+                Explorar Modelos
+              </a>
+              <a href="#contacto" className="bg-transparent border-2 border-white text-white text-lg px-8 py-4 rounded-sm font-bold hover:bg-white hover:text-deep-black transition-all duration-300">
+                Agendar Cita
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Models Section */}
+        <section id="modelos" className="py-24 bg-light-grey">
+          <div className="container mx-auto px-6">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
+              <div>
+                <h2 className="text-primary-red font-bold tracking-widest text-sm uppercase mb-2">Vehículos Destacados</h2>
+                <h3 className="text-4xl md:text-5xl font-black text-deep-black tracking-tight">Nuestros Modelos</h3>
+              </div>
+              <p className="max-w-md text-dark-grey mt-4 md:mt-0">
+                Diseñados para la ciudad y la aventura. Conoce la gama Suzuki disponible en Finest Cars Group.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Grand Vitara Card */}
+              <div className="bg-white group cursor-pointer border border-gray-100 rounded-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                <div className="h-64 bg-gray-200 overflow-hidden relative">
+                  <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=1974&auto=format&fit=crop" alt="Grand Vitara" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute top-4 right-4 bg-deep-black text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wider shadow-lg">SUV</div>
+                </div>
+                <div className="p-8">
+                  <h4 className="text-2xl font-black mb-2 group-hover:text-primary-red transition-colors">Grand Vitara</h4>
+                  <p className="text-dark-grey mb-6 text-sm line-clamp-2">Lujo, espacio y tecnología para toda la familia. Preparada para cualquier camino.</p>
+                  <a href="#contacto" className="border-b-2 border-primary-red text-deep-black font-bold pb-1 hover:text-primary-red transition-colors inline-block uppercase text-sm tracking-widest">
+                    Consultar Precio
+                  </a>
+                </div>
+              </div>
+
+               {/* Jimny Card */}
+               <div className="bg-white group cursor-pointer border border-gray-100 rounded-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                <div className="h-64 bg-gray-200 overflow-hidden relative">
+                  <img src="https://images.unsplash.com/photo-1589148930103-f38b248a86a3?q=80&w=1964&auto=format&fit=crop" alt="Jimny 5 Puertas" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute top-4 right-4 bg-primary-red text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wider shadow-lg">4x4</div>
+                </div>
+                <div className="p-8">
+                  <h4 className="text-2xl font-black mb-2 group-hover:text-primary-red transition-colors">Jimny 5 Puertas</h4>
+                  <p className="text-dark-grey mb-6 text-sm line-clamp-2">El 4x4 más icónico ahora con más espacio. Listo para las rutas más extremas de Venezuela.</p>
+                  <a href="#contacto" className="border-b-2 border-primary-red text-deep-black font-bold pb-1 hover:text-primary-red transition-colors inline-block uppercase text-sm tracking-widest">
+                    Consultar Precio
+                  </a>
+                </div>
+              </div>
+
+              {/* Swift Card */}
+              <div className="bg-white group cursor-pointer border border-gray-100 rounded-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                <div className="h-64 bg-gray-200 overflow-hidden relative">
+                  <img src="https://images.unsplash.com/photo-1627916301648-26f50cddb031?q=80&w=1974&auto=format&fit=crop" alt="Swift" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute top-4 right-4 bg-deep-black text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wider shadow-lg">Hatchback</div>
+                </div>
+                <div className="p-8">
+                  <h4 className="text-2xl font-black mb-2 group-hover:text-primary-red transition-colors">Swift</h4>
+                  <p className="text-dark-grey mb-6 text-sm line-clamp-2">Dinámico, eficiente y estilizado. El auto perfecto para tu día a día en la ciudad.</p>
+                  <a href="#contacto" className="border-b-2 border-primary-red text-deep-black font-bold pb-1 hover:text-primary-red transition-colors inline-block uppercase text-sm tracking-widest">
+                    Consultar Precio
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mt-12 text-center">
+              <button className="bg-deep-black text-white px-8 py-3 rounded-sm font-bold tracking-widest text-sm hover:bg-gray-800 transition-colors uppercase">
+                Ver Catálogo Completo
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contacto" className="py-24 bg-white">
+          <div className="container mx-auto px-6">
+            <div className="grid md:grid-cols-2 gap-16">
+              <div>
+                <h2 className="text-primary-red font-bold tracking-widest text-sm uppercase mb-2">Finest Cars Group</h2>
+                <h3 className="text-4xl md:text-5xl font-black text-deep-black tracking-tight mb-8">Contáctanos</h3>
+                <p className="text-dark-grey mb-10 text-lg">
+                  Visita nuestro concesionario en La Florida y descubre de cerca la gama completa de vehículos Suzuki. Nuestro equipo está listo para asesorarte.
+                </p>
+                
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="bg-light-grey p-3 rounded-sm text-primary-red shrink-0">
+                      <MapPin size={24} />
+                    </div>
+                    <div>
+                      <h5 className="font-bold text-lg mb-1">Visítanos</h5>
+                      <p className="text-dark-grey">Av. Los Chaguaramos, La Florida, Caracas. Distrito Capital, Venezuela.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="bg-light-grey p-3 rounded-sm text-primary-red shrink-0">
+                      <Phone size={24} />
+                    </div>
+                    <div>
+                      <h5 className="font-bold text-lg mb-1">Llámanos</h5>
+                      <p className="text-dark-grey">+58 212-0000000</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="bg-light-grey p-3 rounded-sm text-primary-red shrink-0">
+                      <Mail size={24} />
+                    </div>
+                    <div>
+                      <h5 className="font-bold text-lg mb-1">Escríbenos</h5>
+                      <p className="text-dark-grey">ventas@suzukilaflorida.com.ve</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Social Media */}
+                <div className="mt-12">
+                  <h5 className="font-bold text-lg mb-4">Síguenos en nuestras redes</h5>
+                  <div className="flex gap-4">
+                    <a href="https://www.instagram.com/suzukilaflorida/" target="_blank" rel="noreferrer" className="w-12 h-12 bg-light-grey flex items-center justify-center rounded-sm hover:bg-primary-red hover:text-white transition-colors duration-300">
+                      <Instagram size={20} />
+                    </a>
+                    <a href="https://www.tiktok.com/@suzuki.la.florida" target="_blank" rel="noreferrer" className="w-12 h-12 bg-light-grey flex items-center justify-center rounded-sm hover:bg-primary-red hover:text-white transition-colors duration-300">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/p/Suzuki-La-Florida-61573582777619/" target="_blank" rel="noreferrer" className="w-12 h-12 bg-light-grey flex items-center justify-center rounded-sm hover:bg-primary-red hover:text-white transition-colors duration-300">
+                      <Facebook size={20} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-light-grey p-10 rounded-sm shadow-xl">
+                <h4 className="text-2xl font-bold mb-6">Solicita tu cotización</h4>
+                <form className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-semibold mb-2 text-dark-grey">Nombre Completo</label>
+                    <input type="text" className="w-full px-4 py-3 rounded-sm border border-gray-200 focus:outline-none focus:border-primary-red focus:ring-1 focus:ring-primary-red transition-all" placeholder="Juan Pérez" />
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-semibold mb-2 text-dark-grey">Teléfono</label>
+                      <input type="tel" className="w-full px-4 py-3 rounded-sm border border-gray-200 focus:outline-none focus:border-primary-red focus:ring-1 focus:ring-primary-red transition-all" placeholder="0414-0000000" />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold mb-2 text-dark-grey">Correo</label>
+                      <input type="email" className="w-full px-4 py-3 rounded-sm border border-gray-200 focus:outline-none focus:border-primary-red focus:ring-1 focus:ring-primary-red transition-all" placeholder="correo@ejemplo.com" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold mb-2 text-dark-grey">Modelo de Interés</label>
+                    <select className="w-full px-4 py-3 rounded-sm border border-gray-200 focus:outline-none focus:border-primary-red focus:ring-1 focus:ring-primary-red transition-all bg-white">
+                      <option>Selecciona un vehículo</option>
+                      <option>Grand Vitara</option>
+                      <option>Jimny 5 Puertas</option>
+                      <option>Swift</option>
+                      <option>Fronx</option>
+                      <option>Otro</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold mb-2 text-dark-grey">Mensaje (Opcional)</label>
+                    <textarea rows={4} className="w-full px-4 py-3 rounded-sm border border-gray-200 focus:outline-none focus:border-primary-red focus:ring-1 focus:ring-primary-red transition-all resize-none" placeholder="Cuéntanos más sobre lo que buscas..."></textarea>
+                  </div>
+                  <button className="w-full bg-primary-red text-white font-bold tracking-widest uppercase text-sm py-4 rounded-sm hover:bg-red-700 transition-colors shadow-lg active:transform active:scale-95">
+                    Enviar Solicitud
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      
+      <footer className="bg-deep-black text-white pt-20 pb-10 border-t-4 border-primary-red">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-12">
+            <div className="flex flex-col items-center md:items-start mb-8 md:mb-0">
+               <div className="font-bold text-4xl tracking-tighter flex items-center gap-1 mb-4">
+                  <span className="text-white">FCG</span>
+                  <div className="w-2.5 h-2.5 bg-primary-red self-end mb-1.5" />
+                </div>
+              <p className="text-gray-400 text-sm max-w-xs text-center md:text-left">
+                Finest Cars Group - Concesionario oficial Suzuki en La Florida, Caracas. Tu próximo vehículo te espera.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-2 gap-12 md:gap-24 text-center md:text-left">
+              <div>
+                <h6 className="font-bold mb-4 uppercase text-sm tracking-widest text-primary-red">Enlaces</h6>
+                <ul className="space-y-3 text-gray-400 text-sm">
+                  <li><a href="#inicio" className="hover:text-white transition-colors">Inicio</a></li>
+                  <li><a href="#modelos" className="hover:text-white transition-colors">Modelos</a></li>
+                  <li><a href="#servicios" className="hover:text-white transition-colors">Servicios</a></li>
+                  <li><a href="#contacto" className="hover:text-white transition-colors">Contacto</a></li>
+                </ul>
+              </div>
+              <div>
+                <h6 className="font-bold mb-4 uppercase text-sm tracking-widest text-primary-red">Legal</h6>
+                <ul className="space-y-3 text-gray-400 text-sm">
+                  <li><a href="#" className="hover:text-white transition-colors">Términos de Privacidad</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">Políticas de Venta</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div className="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+            <p>© {new Date().getFullYear()} Finest Cars Group - Suzuki La Florida. Todos los derechos reservados.</p>
+            <p className="mt-2 md:mt-0">Diseñado con ❤️ en Caracas.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
