@@ -49,21 +49,25 @@ function App() {
         </div>
       </header>
 
-      {/* Mobile Nav Overlay */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 top-[76px] bg-white z-40 md:hidden flex flex-col items-center pt-10 border-t border-gray-100 h-[calc(100vh-76px)] overflow-y-auto">
-          <nav className="flex flex-col items-center gap-8 font-semibold text-xl tracking-wide w-full">
+      {/* Mobile Nav Overlay Wrapper */}
+      <div 
+        className={`fixed left-0 right-0 top-[76px] bg-white z-40 md:hidden shadow-2xl border-t border-gray-100 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+          isMenuOpen ? 'max-h-[calc(100vh-76px)] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+        }`}
+      >
+        <div className="flex flex-col items-center pt-10 pb-12 overflow-y-auto h-full max-h-[calc(100vh-76px)] w-full">
+          <nav className={`flex flex-col items-center gap-8 font-semibold text-xl tracking-wide w-full transition-all duration-500 delay-100 ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             <a href="#inicio" onClick={toggleMenu} className="w-full text-center py-2 hover:text-primary-red transition-colors">Inicio</a>
             <a href="#modelos" onClick={toggleMenu} className="w-full text-center py-2 hover:text-primary-red transition-colors">Modelos</a>
             <a href="#servicios" onClick={toggleMenu} className="w-full text-center py-2 hover:text-primary-red transition-colors">Servicios</a>
             <a href="#contacto" onClick={toggleMenu} className="w-full text-center py-2 hover:text-primary-red transition-colors">Contacto</a>
           </nav>
-          <div className="mt-12 mb-8">
+          <div className={`mt-12 mb-8 transition-all duration-500 delay-200 ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             <a href="#contacto" onClick={toggleMenu} className="bg-primary-red text-white px-10 py-4 rounded-sm font-bold text-lg hover:bg-red-700 hover:shadow-lg transition-all flex items-center gap-2">
               Cotizar <Navigation size={20} />
             </a>
           </div>
-          <div className="flex items-center gap-6 mt-auto pb-12 text-dark-grey">
+          <div className={`flex items-center gap-6 mt-auto pb-12 text-dark-grey transition-all duration-500 delay-300 ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             <a href="https://www.instagram.com/suzukilaflorida/" target="_blank" rel="noreferrer"><Instagram size={24} /></a>
             <a href="https://www.tiktok.com/@suzuki.la.florida" target="_blank" rel="noreferrer">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
@@ -71,7 +75,7 @@ function App() {
             <a href="https://www.facebook.com/p/Suzuki-La-Florida-61573582777619/" target="_blank" rel="noreferrer"><Facebook size={24} /></a>
           </div>
         </div>
-      )}
+      </div>
 
       <main>
         {/* Hero Section */}
@@ -85,7 +89,7 @@ function App() {
           
           <div className="container relative mx-auto px-6 flex flex-col items-center justify-center text-center z-10 mt-16 w-full">
             <div className="inline-block border border-white/20 px-4 py-1.5 rounded-full mb-6 backdrop-blur-md">
-              <span className="text-white text-xs font-bold tracking-widest uppercase">Finest Cars Group</span>
+              <span className="text-white text-xs font-bold tracking-widest uppercase pl-[0.1em]">Finest Cars Group</span>
             </div>
             
             <h1 className="text-balance text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tighter leading-[1.1] drop-shadow-xl w-full flex flex-col items-center justify-center">
