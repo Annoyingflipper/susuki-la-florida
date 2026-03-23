@@ -4,6 +4,7 @@ import imgHero from './assets/images/hero-bg.jpg';
 import imgGrandVitara from './assets/images/grand-vitara.jpg';
 import imgJimny from './assets/images/jimny.jpg';
 import imgSwift from './assets/images/swift.jpg';
+import imgLogo from './assets/images/FCG-logo.png';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,13 +14,10 @@ function App() {
     <div className="min-h-screen bg-white text-deep-black font-sans scroll-smooth">
       {/* Navbar */}
       <header className="fixed w-full top-0 bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 flex items-center justify-between px-6 py-4 shadow-sm">
-        <div className="flex items-center gap-2">
-          <div className="font-bold text-3xl tracking-tighter flex items-center gap-1 group cursor-pointer">
-            <span className="text-deep-black group-hover:text-dark-grey transition-colors">FCG</span>
-            <div className="w-2 h-2 bg-primary-red self-end mb-1.5" />
-          </div>
-          <span className="ml-2 pl-2 border-l-2 border-primary-red text-sm font-semibold tracking-widest text-dark-grey uppercase">
-            Suzuki La Florida
+        <div className="flex items-center gap-3">
+          <img src={imgLogo} alt="FCG Logo" className="h-10 w-auto object-contain" />
+          <span className="text-sm border-l border-gray-300 pl-3 ml-1 hidden sm:block font-medium tracking-wide text-dark-grey">
+            SUZUKI LA FLORIDA
           </span>
         </div>
         
@@ -333,13 +331,15 @@ function App() {
       
       <footer className="bg-deep-black text-white pt-20 pb-10 border-t-4 border-primary-red">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-12">
-            <div className="flex flex-col items-center md:items-start mb-8 md:mb-0">
-               <div className="font-bold text-4xl tracking-tighter flex items-center gap-1 mb-4">
-                  <span className="text-white">FCG</span>
-                  <div className="w-2.5 h-2.5 bg-primary-red self-end mb-1.5" />
-                </div>
-              <p className="text-gray-400 text-sm max-w-xs text-center md:text-left">
+          <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-12">
+            <div className="flex flex-col items-center md:items-start mb-8 md:mb-0 max-w-sm">
+              <div className="flex items-center gap-3 text-white mb-6">
+                <img src={imgLogo} alt="FCG Logo" className="h-10 w-auto object-contain brightness-0 invert" />
+                <span className="text-base border-l border-gray-600 pl-3 ml-1">
+                  SUZUKI LA FLORIDA
+                </span>
+              </div>
+              <p className="text-gray-400 text-sm text-center md:text-left">
                 Finest Cars Group - Concesionario oficial Suzuki en La Florida, Caracas. Tu próximo vehículo te espera.
               </p>
             </div>
