@@ -40,10 +40,11 @@ function App() {
         {/* Hero Section */}
         <section id="inicio" className="relative h-[90vh] flex items-center justify-center bg-deep-black pt-20 overflow-hidden">
           {/* Background image placeholder */}
-          <div className="absolute inset-0 opacity-40 mix-blend-overlay">
+          <div className="absolute inset-0 opacity-70">
             <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=2070&auto=format&fit=crop" alt="Suzuki Cars" className="w-full h-full object-cover" />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-deep-black via-deep-black/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-deep-black via-deep-black/60 to-transparent" />
+          <div className="absolute inset-0 bg-black/20" />
           
           <div className="container relative mx-auto px-6 flex flex-col items-center text-center z-10 mt-16">
             <div className="inline-block border border-white/20 px-4 py-1.5 rounded-full mb-6 backdrop-blur-md">
@@ -134,6 +135,54 @@ function App() {
               <button className="bg-deep-black text-white px-8 py-3 rounded-sm font-bold tracking-widest text-sm hover:bg-gray-800 transition-colors uppercase">
                 Ver Catálogo Completo
               </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section id="servicios" className="py-24 bg-deep-black text-white">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-primary-red font-bold tracking-widest text-sm uppercase mb-2">Respaldo Total</h2>
+              <h3 className="text-4xl md:text-5xl font-black tracking-tight mb-4">Servicios FCG Suzuki</h3>
+              <p className="max-w-2xl mx-auto text-gray-400">
+                Ofrecemos una experiencia integral. Desde la adquisición de tu vehículo hasta el mantenimiento y cuidado continuo.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Service 1 */}
+              <div className="bg-dark-grey/40 p-10 rounded-sm border border-gray-800 hover:border-primary-red/50 hover:bg-dark-grey/60 transition-all duration-300 group">
+                <div className="w-16 h-16 bg-primary-red/10 text-primary-red flex items-center justify-center rounded-sm mb-6 group-hover:bg-primary-red group-hover:text-white transition-colors duration-300">
+                  <CarFront size={32} strokeWidth={1.5} />
+                </div>
+                <h4 className="text-2xl font-bold mb-4">Venta de Vehículos</h4>
+                <p className="text-gray-400 leading-relaxed">
+                  Asesoría personalizada para que encuentres el Suzuki perfecto que se adapte a tus necesidades, estilo de vida y presupuesto.
+                </p>
+              </div>
+              
+              {/* Service 2 */}
+              <div className="bg-dark-grey/40 p-10 rounded-sm border border-gray-800 hover:border-primary-red/50 hover:bg-dark-grey/60 transition-all duration-300 group">
+                <div className="w-16 h-16 bg-primary-red/10 text-primary-red flex items-center justify-center rounded-sm mb-6 group-hover:bg-primary-red group-hover:text-white transition-colors duration-300">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+                <h4 className="text-2xl font-bold mb-4">Servicio Técnico</h4>
+                <p className="text-gray-400 leading-relaxed">
+                  Taller especializado con mecánicos altamente capacitados. Mantenimiento preventivo, correctivo y diagnóstico computarizado.
+                </p>
+              </div>
+              
+              {/* Service 3 */}
+              <div className="bg-dark-grey/40 p-10 rounded-sm border border-gray-800 hover:border-primary-red/50 hover:bg-dark-grey/60 transition-all duration-300 group">
+                <div className="w-16 h-16 bg-primary-red/10 text-primary-red flex items-center justify-center rounded-sm mb-6 group-hover:bg-primary-red group-hover:text-white transition-colors duration-300">
+                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <h4 className="text-2xl font-bold mb-4">Repuestos y Accesorios</h4>
+                <p className="text-gray-400 leading-relaxed">
+                  Piezas, repuestos 100% originales Suzuki y mercancía oficial para garantizar el mejor rendimiento y vida útil de tu auto.
+                </p>
+              </div>
             </div>
           </div>
         </section>
