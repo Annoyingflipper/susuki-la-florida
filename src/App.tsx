@@ -1,10 +1,14 @@
-import { Instagram, Facebook, MapPin, Phone, Mail, Navigation, CarFront } from 'lucide-react';
+import { useState } from 'react';
+import { Instagram, Facebook, MapPin, Phone, Mail, Navigation, CarFront, Menu, X } from 'lucide-react';
 import imgHero from './assets/images/hero-bg.jpg';
 import imgGrandVitara from './assets/images/grand-vitara.jpg';
 import imgJimny from './assets/images/jimny.jpg';
 import imgSwift from './assets/images/swift.jpg';
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   return (
     <div className="min-h-screen bg-white text-deep-black font-sans scroll-smooth">
       {/* Navbar */}
@@ -34,11 +38,40 @@ function App() {
             </a>
             <a href="https://www.facebook.com/p/Suzuki-La-Florida-61573582777619/" target="_blank" rel="noreferrer" className="hover:text-primary-red transition-colors"><Facebook size={20} /></a>
           </div>
-          <a href="#contacto" className="bg-primary-red text-white px-6 py-2.5 rounded-sm font-bold text-sm hover:bg-red-700 hover:shadow-lg hover:shadow-primary-red/20 transition-all flex items-center gap-2">
+          <a href="#contacto" className="hidden md:flex bg-primary-red text-white px-6 py-2.5 rounded-sm font-bold text-sm hover:bg-red-700 hover:shadow-lg hover:shadow-primary-red/20 transition-all items-center gap-2">
             Cotizar <Navigation size={16} />
           </a>
+          
+          {/* Mobile Menu Toggle */}
+          <button onClick={toggleMenu} className="md:hidden text-deep-black p-2 focus:outline-none hover:text-primary-red transition-colors" aria-label="Toggle menu">
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
       </header>
+
+      {/* Mobile Nav Overlay */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 top-[76px] bg-white z-40 md:hidden flex flex-col items-center pt-10 border-t border-gray-100 h-[calc(100vh-76px)] overflow-y-auto">
+          <nav className="flex flex-col items-center gap-8 font-semibold text-xl tracking-wide w-full">
+            <a href="#inicio" onClick={toggleMenu} className="w-full text-center py-2 hover:text-primary-red transition-colors">Inicio</a>
+            <a href="#modelos" onClick={toggleMenu} className="w-full text-center py-2 hover:text-primary-red transition-colors">Modelos</a>
+            <a href="#servicios" onClick={toggleMenu} className="w-full text-center py-2 hover:text-primary-red transition-colors">Servicios</a>
+            <a href="#contacto" onClick={toggleMenu} className="w-full text-center py-2 hover:text-primary-red transition-colors">Contacto</a>
+          </nav>
+          <div className="mt-12 mb-8">
+            <a href="#contacto" onClick={toggleMenu} className="bg-primary-red text-white px-10 py-4 rounded-sm font-bold text-lg hover:bg-red-700 hover:shadow-lg transition-all flex items-center gap-2">
+              Cotizar <Navigation size={20} />
+            </a>
+          </div>
+          <div className="flex items-center gap-6 mt-auto pb-12 text-dark-grey">
+            <a href="https://www.instagram.com/suzukilaflorida/" target="_blank" rel="noreferrer"><Instagram size={24} /></a>
+            <a href="https://www.tiktok.com/@suzuki.la.florida" target="_blank" rel="noreferrer">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+            </a>
+            <a href="https://www.facebook.com/p/Suzuki-La-Florida-61573582777619/" target="_blank" rel="noreferrer"><Facebook size={24} /></a>
+          </div>
+        </div>
+      )}
 
       <main>
         {/* Hero Section */}
@@ -50,16 +83,17 @@ function App() {
           <div className="absolute inset-0 bg-gradient-to-t from-deep-black via-deep-black/60 to-transparent" />
           <div className="absolute inset-0 bg-black/20" />
           
-          <div className="container relative mx-auto px-6 flex flex-col items-center text-center z-10 mt-16">
+          <div className="container relative mx-auto px-6 flex flex-col items-center justify-center text-center z-10 mt-16 w-full">
             <div className="inline-block border border-white/20 px-4 py-1.5 rounded-full mb-6 backdrop-blur-md">
               <span className="text-white text-xs font-bold tracking-widest uppercase">Finest Cars Group</span>
             </div>
             
-            <h1 className="text-5xl md:text-8xl font-black text-white mb-6 tracking-tighter leading-tight drop-shadow-xl">
-              POTENCIA <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-red to-red-500">SUZUKI</span><br/> EN CARACAS.
+            <h1 className="text-balance text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tighter leading-[1.1] drop-shadow-xl w-full flex flex-col items-center justify-center">
+              <span>POTENCIA <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-red to-red-500">SUZUKI</span></span>
+              <span>EN CARACAS.</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-light-grey mb-12 max-w-3xl mx-auto font-light leading-relaxed drop-shadow-md">
+            <p className="text-balance text-lg md:text-2xl text-light-grey mb-12 max-w-3xl mx-auto font-light leading-relaxed drop-shadow-md w-full">
               Descubre nuestra línea exclusiva de vehículos y experimenta la verdadera aventura. Tu viaje comienza en La Florida.
             </p>
             
