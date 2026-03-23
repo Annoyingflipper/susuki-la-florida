@@ -4,7 +4,7 @@ import imgHero from './assets/images/hero-bg.jpg';
 import imgGrandVitara from './assets/images/grand-vitara.jpg';
 import imgJimny from './assets/images/jimny.jpg';
 import imgSwift from './assets/images/swift.jpg';
-import imgLogo from './assets/images/FCG-logo-sin-fondo.png';
+import imgLogo from './assets/images/FCG-logo-con-fondo.png';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,11 +13,12 @@ function App() {
   return (
     <div className="min-h-screen bg-white text-deep-black font-sans scroll-smooth">
       {/* Navbar */}
-      <header className="fixed w-full top-0 bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 flex items-center justify-between px-6 py-4 shadow-sm">
-        <div className="flex items-center gap-4">
-          <img src={imgLogo} alt="FCG Logo" className="h-14 sm:h-16 w-auto object-contain drop-shadow-sm" />
-          <span className="text-sm border-l border-gray-300 pl-4 ml-1 hidden sm:block font-medium tracking-wide text-dark-grey">
-            SUZUKI LA FLORIDA
+      <header className="fixed w-full top-0 bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 flex items-center justify-between px-4 sm:px-6 py-4 shadow-sm">
+        <div className="flex items-center gap-3 sm:gap-4">
+          <img src={imgLogo} alt="FCG Logo" className="h-10 sm:h-14 md:h-16 w-auto object-contain drop-shadow-sm rounded-sm" />
+          <span className="text-[10px] leading-tight sm:text-xs md:text-sm border-l border-gray-300 pl-3 sm:pl-4 ml-1 font-medium tracking-wide text-dark-grey flex flex-col justify-center">
+            <span>SUZUKI</span>
+            <span>LA FLORIDA</span>
           </span>
         </div>
         
