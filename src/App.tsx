@@ -5,6 +5,7 @@ import imgGrandVitara from './assets/images/grand-vitara.jpg';
 import imgJimny from './assets/images/jimny.jpg';
 import imgSwift from './assets/images/swift.jpg';
 import imgLogo from './assets/images/FCG-logo-con-fondo.png';
+import imgLogoFooter from './assets/images/FCG-logo-sin-fondo.png';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -334,7 +335,7 @@ function App() {
           <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-12">
             <div className="flex flex-col items-center md:items-start mb-8 md:mb-0 max-w-sm">
               <div className="flex items-center gap-4 text-white mb-6">
-                <img src={imgLogo} alt="FCG Logo" className="h-16 sm:h-20 w-auto object-contain brightness-0 invert" />
+                <img src={imgLogoFooter} alt="FCG Logo" className="h-16 sm:h-20 w-auto object-contain brightness-0 invert" />
                 <span className="text-base border-l border-gray-600 pl-4 ml-1">
                   SUZUKI LA FLORIDA
                 </span>
