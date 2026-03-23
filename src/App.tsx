@@ -1,4 +1,8 @@
 import { Instagram, Facebook, MapPin, Phone, Mail, Navigation, CarFront } from 'lucide-react';
+import imgHero from './assets/images/hero-bg.jpg';
+import imgGrandVitara from './assets/images/grand-vitara.jpg';
+import imgJimny from './assets/images/jimny.jpg';
+import imgSwift from './assets/images/swift.jpg';
 
 function App() {
   return (
@@ -41,7 +45,7 @@ function App() {
         <section id="inicio" className="relative h-[90vh] flex items-center justify-center bg-deep-black pt-20 overflow-hidden">
           {/* Background image placeholder */}
           <div className="absolute inset-0 opacity-70">
-            <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=2070&auto=format&fit=crop" alt="Suzuki Cars" className="w-full h-full object-cover" />
+            <img src={imgHero} alt="Suzuki Cars" className="w-full h-full object-cover" />
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-deep-black via-deep-black/60 to-transparent" />
           <div className="absolute inset-0 bg-black/20" />
@@ -88,7 +92,7 @@ function App() {
               {/* Grand Vitara Card */}
               <div className="bg-white group cursor-pointer border border-gray-100 rounded-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
                 <div className="h-64 bg-gray-200 overflow-hidden relative">
-                  <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=1974&auto=format&fit=crop" alt="Grand Vitara" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <img src={imgGrandVitara} alt="Grand Vitara" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute top-4 right-4 bg-deep-black text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wider shadow-lg">SUV</div>
                 </div>
                 <div className="p-8">
@@ -103,7 +107,7 @@ function App() {
                {/* Jimny Card */}
                <div className="bg-white group cursor-pointer border border-gray-100 rounded-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
                 <div className="h-64 bg-gray-200 overflow-hidden relative">
-                  <img src="https://images.unsplash.com/photo-1589148930103-f38b248a86a3?q=80&w=1964&auto=format&fit=crop" alt="Jimny 5 Puertas" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <img src={imgJimny} alt="Jimny 5 Puertas" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute top-4 right-4 bg-primary-red text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wider shadow-lg">4x4</div>
                 </div>
                 <div className="p-8">
@@ -118,7 +122,7 @@ function App() {
               {/* Swift Card */}
               <div className="bg-white group cursor-pointer border border-gray-100 rounded-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
                 <div className="h-64 bg-gray-200 overflow-hidden relative">
-                  <img src="https://images.unsplash.com/photo-1627916301648-26f50cddb031?q=80&w=1974&auto=format&fit=crop" alt="Swift" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <img src={imgSwift} alt="Swift" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute top-4 right-4 bg-deep-black text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wider shadow-lg">Hatchback</div>
                 </div>
                 <div className="p-8">
