@@ -16,9 +16,8 @@ function App() {
       <header className="fixed w-full top-0 bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 flex items-center justify-between px-4 sm:px-6 py-4 shadow-sm">
         <div className="flex items-center gap-3 sm:gap-4">
           <img src={imgLogo} alt="FCG Logo" className="h-10 sm:h-14 md:h-16 w-auto object-contain drop-shadow-sm rounded-sm" />
-          <span className="text-[10px] leading-tight sm:text-xs md:text-sm border-l border-gray-300 pl-3 sm:pl-4 ml-1 font-medium tracking-wide text-dark-grey flex flex-col justify-center">
-            <span>SUZUKI</span>
-            <span>LA FLORIDA</span>
+          <span className="text-[11px] sm:text-xs md:text-sm border-l border-gray-300 pl-3 sm:pl-4 ml-1 font-medium tracking-wide text-dark-grey whitespace-nowrap flex items-center h-full">
+            SUZUKI LA FLORIDA
           </span>
         </div>
         
