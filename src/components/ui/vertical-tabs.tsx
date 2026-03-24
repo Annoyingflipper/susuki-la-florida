@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "../../lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -37,6 +37,24 @@ export default function VerticalTabs() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Only autoplay when section is visible in viewport
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const handleNext = useCallback(() => {
     setDirection(1);
@@ -55,19 +73,20 @@ export default function VerticalTabs() {
     setIsPaused(false);
   };
 
+  // Autoplay ONLY when visible and not paused
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || !isVisible) return;
 
     const interval = setInterval(() => {
       handleNext();
     }, AUTO_PLAY_DURATION);
 
     return () => clearInterval(interval);
-  }, [activeIndex, isPaused, handleNext]);
+  }, [activeIndex, isPaused, isVisible, handleNext]);
 
   const variants = {
-    enter: (direction: number) => ({
-      y: direction > 0 ? "-100%" : "100%",
+    enter: (dir: number) => ({
+      y: dir > 0 ? "-100%" : "100%",
       opacity: 0,
     }),
     center: {
@@ -75,15 +94,15 @@ export default function VerticalTabs() {
       y: 0,
       opacity: 1,
     },
-    exit: (direction: number) => ({
+    exit: (dir: number) => ({
       zIndex: 0,
-      y: direction > 0 ? "100%" : "-100%",
+      y: dir > 0 ? "100%" : "-100%",
       opacity: 0,
     }),
   };
 
   return (
-    <section id="servicios" className="w-full bg-deep-black py-16 md:py-24">
+    <section ref={sectionRef} id="servicios" className="w-full bg-deep-black py-16 md:py-24 overflow-hidden">
       <div className="w-full px-6 md:px-8 lg:px-12 xl:px-20 mx-auto container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Content */}
@@ -95,7 +114,7 @@ export default function VerticalTabs() {
               </h3>
             </div>
 
-            <div className="flex flex-col space-y-0 min-h-[420px]">
+            <div className="flex flex-col space-y-0">
               {SERVICES.map((service, index) => {
                 const isActive = activeIndex === index;
                 return (
@@ -112,11 +131,11 @@ export default function VerticalTabs() {
                     <div className="absolute left-[-16px] md:left-[-24px] top-0 bottom-0 w-[2px] bg-gray-800">
                       {isActive && (
                         <motion.div
-                          key={`progress-${index}-${isPaused}`}
+                          key={`progress-${index}-${isPaused}-${isVisible}`}
                           className="absolute top-0 left-0 w-full bg-primary-red origin-top"
                           initial={{ height: "0%" }}
                           animate={
-                            isPaused ? { height: "0%" } : { height: "100%" }
+                            isPaused || !isVisible ? { height: "0%" } : { height: "100%" }
                           }
                           transition={{
                             duration: AUTO_PLAY_DURATION / 1000,
@@ -140,24 +159,16 @@ export default function VerticalTabs() {
                         {service.title}
                       </span>
 
-                      <AnimatePresence mode="wait">
-                        {isActive && (
-                          <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{
-                              duration: 0.3,
-                              ease: [0.23, 1, 0.32, 1],
-                            }}
-                            className="overflow-hidden"
-                          >
-                            <p className="text-gray-400 text-sm md:text-base font-normal leading-relaxed max-w-sm pb-2 mt-4">
-                              {service.description}
-                            </p>
-                          </motion.div>
+                      <div
+                        className={cn(
+                          "overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)]",
+                          isActive ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
                         )}
-                      </AnimatePresence>
+                      >
+                        <p className="text-gray-400 text-sm md:text-base font-normal leading-relaxed max-w-sm pb-2 mt-4">
+                          {service.description}
+                        </p>
+                      </div>
                     </div>
                   </button>
                 );
@@ -176,7 +187,7 @@ export default function VerticalTabs() {
                 <AnimatePresence
                   initial={false}
                   custom={direction}
-                  mode="popLayout"
+                  mode="sync"
                 >
                   <motion.div
                     key={activeIndex}
