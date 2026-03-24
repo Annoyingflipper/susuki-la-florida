@@ -7,6 +7,8 @@ import imgSwift from './assets/images/swift.jpg';
 import imgLogo from './assets/images/FCG-logo-con-fondo.png';
 import imgLogoFooter from './assets/images/FCG-logo-sin-fondo.png';
 import VerticalTabs from './components/ui/vertical-tabs';
+import { AccordionComponent } from './components/ui/faq-accordion';
+import { motion } from 'motion/react';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -87,7 +89,12 @@ function App() {
           <div className="absolute inset-0 bg-gradient-to-t from-deep-black via-deep-black/60 to-transparent" />
           <div className="absolute inset-0 bg-black/20" />
           
-          <div className="container relative mx-auto px-6 flex flex-col items-center justify-center text-center z-10 mt-16 w-full">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="container relative mx-auto px-6 flex flex-col items-center justify-center text-center z-10 mt-16 w-full"
+          >
             <div className="inline-block border border-white/20 px-4 py-1.5 rounded-full mb-6 backdrop-blur-md">
               <span className="text-white text-xs font-bold tracking-widest uppercase pl-[0.1em]">Finest Cars Group</span>
             </div>
@@ -110,11 +117,18 @@ function App() {
                 Agendar Cita
               </a>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* Models Section */}
-        <section id="modelos" className="py-24 bg-light-grey">
+        <motion.section 
+          id="modelos" 
+          className="py-24 bg-light-grey"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <div className="container mx-auto px-6">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
               <div>
@@ -179,13 +193,37 @@ function App() {
               </button>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Services Section */}
-        <VerticalTabs />
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <VerticalTabs />
+        </motion.div>
+
+        {/* FAQ Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <AccordionComponent />
+        </motion.div>
 
         {/* Contact Section */}
-        <section id="contacto" className="py-24 bg-white">
+        <motion.section 
+          id="contacto" 
+          className="py-24 bg-white"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <div className="container mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-16">
               <div>
@@ -282,8 +320,26 @@ function App() {
                 </form>
               </div>
             </div>
+
+            {/* Map Section */}
+            <motion.div 
+              className="mt-20 w-full h-[400px] border border-gray-50 rounded-sm shadow-xl overflow-hidden relative"
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <iframe 
+                src="https://maps.google.com/maps?q=10.5035191,-66.8736772&z=17&output=embed" 
+                className="w-full h-full border-0 absolute inset-0" 
+                allowFullScreen={false} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="FCG Car Dealer Location"
+              ></iframe>
+            </motion.div>
           </div>
-        </section>
+        </motion.section>
       </main>
       
       <footer className="bg-deep-black text-white pt-20 pb-10 border-t-4 border-primary-red">
