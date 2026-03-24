@@ -95,7 +95,7 @@ export default function VerticalTabs() {
               </h3>
             </div>
 
-            <div className="flex flex-col space-y-0">
+            <div className="flex flex-col space-y-0 min-h-[420px]">
               {SERVICES.map((service, index) => {
                 const isActive = activeIndex === index;
                 return (

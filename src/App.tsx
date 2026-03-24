@@ -8,6 +8,7 @@ import imgLogo from './assets/images/FCG-logo-con-fondo.png';
 import imgLogoFooter from './assets/images/FCG-logo-sin-fondo.png';
 import VerticalTabs from './components/ui/vertical-tabs';
 import { AccordionComponent } from './components/ui/faq-accordion';
+import { Tilt } from './components/ui/tilt';
 import { motion } from 'motion/react';
 
 function App() {
@@ -142,7 +143,7 @@ function App() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Grand Vitara Card */}
-              <div className="bg-white group cursor-pointer border border-gray-100 rounded-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+              <Tilt rotationFactor={6} className="bg-white group cursor-pointer border border-gray-100 rounded-sm hover:shadow-2xl transition-all duration-500 overflow-hidden">
                 <div className="h-64 bg-gray-200 overflow-hidden relative">
                   <img src={imgGrandVitara} alt="Grand Vitara" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute top-4 right-4 bg-deep-black text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wider shadow-lg">SUV</div>
@@ -154,10 +155,10 @@ function App() {
                     Consultar Precio
                   </a>
                 </div>
-              </div>
+              </Tilt>
 
                {/* Jimny Card */}
-               <div className="bg-white group cursor-pointer border border-gray-100 rounded-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+               <Tilt rotationFactor={6} className="bg-white group cursor-pointer border border-gray-100 rounded-sm hover:shadow-2xl transition-all duration-500 overflow-hidden">
                 <div className="h-64 bg-gray-200 overflow-hidden relative">
                   <img src={imgJimny} alt="Jimny 5 Puertas" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute top-4 right-4 bg-primary-red text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wider shadow-lg">4x4</div>
@@ -169,10 +170,10 @@ function App() {
                     Consultar Precio
                   </a>
                 </div>
-              </div>
+              </Tilt>
 
               {/* Swift Card */}
-              <div className="bg-white group cursor-pointer border border-gray-100 rounded-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+              <Tilt rotationFactor={6} className="bg-white group cursor-pointer border border-gray-100 rounded-sm hover:shadow-2xl transition-all duration-500 overflow-hidden">
                 <div className="h-64 bg-gray-200 overflow-hidden relative">
                   <img src={imgSwift} alt="Swift" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute top-4 right-4 bg-deep-black text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wider shadow-lg">Hatchback</div>
@@ -184,7 +185,7 @@ function App() {
                     Consultar Precio
                   </a>
                 </div>
-              </div>
+              </Tilt>
             </div>
             
             <div className="mt-12 text-center">
@@ -225,7 +226,7 @@ function App() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <div className="container mx-auto px-6">
-            <div className="grid md:grid-cols-2 gap-16">
+            <div className="grid lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_450px] gap-12 lg:gap-16">
               <div>
                 <h2 className="text-primary-red font-bold tracking-widest text-sm uppercase mb-2">Finest Cars Group</h2>
                 <h3 className="text-4xl md:text-5xl font-black text-deep-black tracking-tight mb-8">Contáctanos</h3>
@@ -233,56 +234,72 @@ function App() {
                   Visita nuestro concesionario en La Florida y descubre de cerca la gama completa de vehículos Suzuki. Nuestro equipo está listo para asesorarte.
                 </p>
                 
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-light-grey p-3 rounded-sm text-primary-red shrink-0">
-                      <MapPin size={24} />
+                <div className="grid sm:grid-cols-2 gap-8 items-start">
+                  <div>
+                    <div className="space-y-6">
+                      <div className="flex items-start gap-4">
+                        <div className="bg-light-grey p-3 rounded-sm text-primary-red shrink-0">
+                          <MapPin size={24} />
+                        </div>
+                        <div>
+                          <h5 className="font-bold text-lg mb-1">Visítanos</h5>
+                          <p className="text-dark-grey">Av. Los Chaguaramos, La Florida, Caracas. Distrito Capital.</p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-4">
+                        <div className="bg-light-grey p-3 rounded-sm text-primary-red shrink-0">
+                          <Phone size={24} />
+                        </div>
+                        <div>
+                          <h5 className="font-bold text-lg mb-1">Llámanos</h5>
+                          <p className="text-dark-grey">+58 212-0000000</p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-4">
+                        <div className="bg-light-grey p-3 rounded-sm text-primary-red shrink-0">
+                          <Mail size={24} />
+                        </div>
+                        <div>
+                          <h5 className="font-bold text-lg mb-1">Escríbenos</h5>
+                          <p className="text-dark-grey truncate max-w-[150px] sm:max-w-[200px]" title="ventas@suzukilaflorida.com.ve">ventas@suzukilaflorida.com.ve</p>
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <h5 className="font-bold text-lg mb-1">Visítanos</h5>
-                      <p className="text-dark-grey">Av. Los Chaguaramos, La Florida, Caracas. Distrito Capital, Venezuela.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="bg-light-grey p-3 rounded-sm text-primary-red shrink-0">
-                      <Phone size={24} />
-                    </div>
-                    <div>
-                      <h5 className="font-bold text-lg mb-1">Llámanos</h5>
-                      <p className="text-dark-grey">+58 212-0000000</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="bg-light-grey p-3 rounded-sm text-primary-red shrink-0">
-                      <Mail size={24} />
-                    </div>
-                    <div>
-                      <h5 className="font-bold text-lg mb-1">Escríbenos</h5>
-                      <p className="text-dark-grey">ventas@suzukilaflorida.com.ve</p>
-                    </div>
-                  </div>
-                </div>
 
-                {/* Social Media */}
-                <div className="mt-12">
-                  <h5 className="font-bold text-lg mb-4">Síguenos en nuestras redes</h5>
-                  <div className="flex gap-4">
-                    <a href="https://www.instagram.com/suzukilaflorida/" target="_blank" rel="noreferrer" className="w-12 h-12 bg-light-grey flex items-center justify-center rounded-sm hover:bg-primary-red hover:text-white transition-colors duration-300">
-                      <Instagram size={20} />
-                    </a>
-                    <a href="https://www.tiktok.com/@suzuki.la.florida" target="_blank" rel="noreferrer" className="w-12 h-12 bg-light-grey flex items-center justify-center rounded-sm hover:bg-primary-red hover:text-white transition-colors duration-300">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
-                    </a>
-                    <a href="https://www.facebook.com/p/Suzuki-La-Florida-61573582777619/" target="_blank" rel="noreferrer" className="w-12 h-12 bg-light-grey flex items-center justify-center rounded-sm hover:bg-primary-red hover:text-white transition-colors duration-300">
-                      <Facebook size={20} />
-                    </a>
+                    {/* Social Media */}
+                    <div className="mt-12">
+                      <h5 className="font-bold text-lg mb-4">Síguenos en nuestras redes</h5>
+                      <div className="flex gap-4">
+                        <a href="https://www.instagram.com/suzukilaflorida/" target="_blank" rel="noreferrer" className="w-12 h-12 bg-light-grey flex items-center justify-center rounded-sm hover:bg-primary-red hover:text-white transition-colors duration-300">
+                          <Instagram size={20} />
+                        </a>
+                        <a href="https://www.tiktok.com/@suzuki.la.florida" target="_blank" rel="noreferrer" className="w-12 h-12 bg-light-grey flex items-center justify-center rounded-sm hover:bg-primary-red hover:text-white transition-colors duration-300">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/p/Suzuki-La-Florida-61573582777619/" target="_blank" rel="noreferrer" className="w-12 h-12 bg-light-grey flex items-center justify-center rounded-sm hover:bg-primary-red hover:text-white transition-colors duration-300">
+                          <Facebook size={20} />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Square Map */}
+                  <div className="w-full aspect-square border-4 border-gray-50 rounded-md shadow-xl overflow-hidden relative">
+                    <iframe 
+                      src="https://maps.google.com/maps?q=10.5035191,-66.8736772&z=17&output=embed" 
+                      className="w-full h-full border-0 absolute inset-0" 
+                      allowFullScreen={false} 
+                      loading="lazy" 
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="FCG Car Dealer Location"
+                    ></iframe>
                   </div>
                 </div>
               </div>
               
-              <div className="bg-light-grey p-10 rounded-sm shadow-xl">
+              <div className="bg-light-grey p-8 md:p-10 rounded-sm shadow-xl h-fit">
                 <h4 className="text-2xl font-bold mb-6">Solicita tu cotización</h4>
                 <form className="space-y-4">
                   <div>
@@ -320,24 +337,6 @@ function App() {
                 </form>
               </div>
             </div>
-
-            {/* Map Section */}
-            <motion.div 
-              className="mt-20 w-full h-[400px] border border-gray-50 rounded-sm shadow-xl overflow-hidden relative"
-              initial={{ opacity: 0, scale: 0.98 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              <iframe 
-                src="https://maps.google.com/maps?q=10.5035191,-66.8736772&z=17&output=embed" 
-                className="w-full h-full border-0 absolute inset-0" 
-                allowFullScreen={false} 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-                title="FCG Car Dealer Location"
-              ></iframe>
-            </motion.div>
           </div>
         </motion.section>
       </main>
