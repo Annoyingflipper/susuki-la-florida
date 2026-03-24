@@ -111,7 +111,6 @@ export function AccordionComponent() {
       <CustomAccordion
         type="single"
         collapsible
-        defaultValue="item-0"
         className="bg-white rounded-md shadow-2xl border border-gray-200 p-4 md:p-8"
       >
         {faqs.map((faq, index) => (

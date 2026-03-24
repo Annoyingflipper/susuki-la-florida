@@ -8,6 +8,7 @@ import imgLogo from './assets/images/FCG-logo-con-fondo.png';
 import imgLogoFooter from './assets/images/FCG-logo-sin-fondo.png';
 import VerticalTabs from './components/ui/vertical-tabs';
 import { AccordionComponent } from './components/ui/faq-accordion';
+import { AnimatedTestimonials } from './components/ui/animated-testimonials';
 import { Tilt } from './components/ui/tilt';
 import { motion } from 'motion/react';
 
@@ -205,6 +206,45 @@ function App() {
         >
           <VerticalTabs />
         </motion.div>
+
+        {/* Testimonials Section */}
+        <motion.section
+          className="py-24 bg-light-grey"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-4">
+              <h2 className="text-primary-red font-bold tracking-widest text-sm uppercase mb-2">Nuestros Clientes</h2>
+              <h3 className="text-4xl md:text-5xl font-black text-deep-black tracking-tight">Lo Que Dicen de Nosotros</h3>
+            </div>
+            <AnimatedTestimonials
+              testimonials={[
+                {
+                  quote: "Desde el momento que llegamos nos atendieron de forma excepcional. El asesor nos guió en cada paso y pudimos escoger el Jimny perfecto para nuestra familia. ¡100% recomendados!",
+                  name: "Carlos Martínez",
+                  designation: "Propietario de un Suzuki Jimny",
+                  src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=800&auto=format&fit=crop",
+                },
+                {
+                  quote: "El servicio post-venta es de primer nivel. Llevo mi Grand Vitara al taller autorizado y siempre me entregan el vehículo como nuevo. La atención y profesionalismo son inigualables.",
+                  name: "María Rodríguez",
+                  designation: "Propietaria de un Suzuki Grand Vitara",
+                  src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=800&auto=format&fit=crop",
+                },
+                {
+                  quote: "Compré mi Swift aquí y ha sido la mejor decisión. El proceso fue rápido, transparente y sin complicaciones. Ya estoy planeando mi segundo Suzuki con ellos.",
+                  name: "Andrés Gutiérrez",
+                  designation: "Propietario de un Suzuki Swift",
+                  src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=800&auto=format&fit=crop",
+                },
+              ]}
+              autoplay
+            />
+          </div>
+        </motion.section>
 
         {/* FAQ Section */}
         <motion.div
