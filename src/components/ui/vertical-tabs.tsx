@@ -4,6 +4,9 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "../../lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import imgServiceVentas from "../../assets/images/service-ventas.jpg";
+import imgServiceTaller from "../../assets/images/service-taller.jpg";
+import imgServiceRepuestos from "../../assets/images/service-repuestos.jpg";
 
 const SERVICES = [
   {
@@ -11,23 +14,20 @@ const SERVICES = [
     title: "Venta de Vehículos",
     description:
       "Asesoría personalizada para que encuentres el Suzuki perfecto que se adapte a tus necesidades, estilo de vida y presupuesto.",
-    image:
-      "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1200",
+    image: imgServiceVentas,
   },
   {
     id: "02",
     title: "Servicio Técnico",
     description: "Taller especializado con mecánicos altamente capacitados. Mantenimiento preventivo, correctivo y diagnóstico computarizado.",
-    image:
-      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=1200",
+    image: imgServiceTaller,
   },
   {
     id: "03",
     title: "Repuestos y Accesorios",
     description:
       "Piezas, repuestos 100% originales Suzuki y mercancía oficial para garantizar el mejor rendimiento y vida útil de tu auto.",
-    image:
-      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?q=80&w=1200",
+    image: imgServiceRepuestos,
   },
 ];
 

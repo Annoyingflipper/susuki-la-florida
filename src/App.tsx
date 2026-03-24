@@ -6,10 +6,12 @@ import imgJimny from './assets/images/jimny.jpg';
 import imgSwift from './assets/images/swift.jpg';
 import imgLogo from './assets/images/FCG-logo-con-fondo.png';
 import imgLogoFooter from './assets/images/FCG-logo-sin-fondo.png';
+import imgTestimonialCarlos from './assets/images/testimonial-carlos.jpg';
+import imgTestimonialMaria from './assets/images/testimonial-maria.jpg';
+import imgTestimonialAndres from './assets/images/testimonial-andres.jpg';
 import VerticalTabs from './components/ui/vertical-tabs';
 import { AccordionComponent } from './components/ui/faq-accordion';
 import { AnimatedTestimonials } from './components/ui/animated-testimonials';
-import { Tilt } from './components/ui/tilt';
 import { motion } from 'motion/react';
 
 function App() {
@@ -132,19 +134,14 @@ function App() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <div className="container mx-auto px-6">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
-              <div>
-                <h2 className="text-primary-red font-bold tracking-widest text-sm uppercase mb-2">Vehículos Destacados</h2>
-                <h3 className="text-4xl md:text-5xl font-black text-deep-black tracking-tight">Nuestros Modelos</h3>
-              </div>
-              <p className="max-w-md text-dark-grey mt-4 md:mt-0">
-                Diseñados para la ciudad y la aventura. Conoce la gama Suzuki disponible en Finest Cars Group.
-              </p>
+            <div className="mb-16">
+              <h2 className="text-primary-red font-bold tracking-widest text-sm uppercase mb-2">Vehículos Destacados</h2>
+              <h3 className="text-4xl md:text-5xl font-black text-deep-black tracking-tight">Nuestros Modelos</h3>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Grand Vitara Card */}
-              <Tilt rotationFactor={6} className="bg-white group cursor-pointer border border-gray-100 rounded-sm hover:shadow-2xl transition-all duration-500 overflow-hidden">
+              <div className="bg-white group cursor-pointer border border-gray-100 rounded-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
                 <div className="h-64 bg-gray-200 overflow-hidden relative">
                   <img src={imgGrandVitara} alt="Grand Vitara" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute top-4 right-4 bg-deep-black text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wider shadow-lg">SUV</div>
@@ -156,10 +153,10 @@ function App() {
                     Consultar Precio
                   </a>
                 </div>
-              </Tilt>
+              </div>
 
                {/* Jimny Card */}
-               <Tilt rotationFactor={6} className="bg-white group cursor-pointer border border-gray-100 rounded-sm hover:shadow-2xl transition-all duration-500 overflow-hidden">
+              <div className="bg-white group cursor-pointer border border-gray-100 rounded-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
                 <div className="h-64 bg-gray-200 overflow-hidden relative">
                   <img src={imgJimny} alt="Jimny 5 Puertas" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute top-4 right-4 bg-primary-red text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wider shadow-lg">4x4</div>
@@ -171,10 +168,10 @@ function App() {
                     Consultar Precio
                   </a>
                 </div>
-              </Tilt>
+              </div>
 
               {/* Swift Card */}
-              <Tilt rotationFactor={6} className="bg-white group cursor-pointer border border-gray-100 rounded-sm hover:shadow-2xl transition-all duration-500 overflow-hidden">
+              <div className="bg-white group cursor-pointer border border-gray-100 rounded-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
                 <div className="h-64 bg-gray-200 overflow-hidden relative">
                   <img src={imgSwift} alt="Swift" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute top-4 right-4 bg-deep-black text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wider shadow-lg">Hatchback</div>
@@ -186,7 +183,7 @@ function App() {
                     Consultar Precio
                   </a>
                 </div>
-              </Tilt>
+              </div>
             </div>
             
             <div className="mt-12 text-center">
@@ -209,7 +206,7 @@ function App() {
 
         {/* Testimonials Section */}
         <motion.section
-          className="py-24 bg-light-grey"
+          className="py-24 bg-light-grey relative z-10"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -226,19 +223,19 @@ function App() {
                   quote: "Desde el momento que llegamos nos atendieron de forma excepcional. El asesor nos guió en cada paso y pudimos escoger el Jimny perfecto para nuestra familia. ¡100% recomendados!",
                   name: "Carlos Martínez",
                   designation: "Propietario de un Suzuki Jimny",
-                  src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=800&auto=format&fit=crop",
+                  src: imgTestimonialCarlos,
                 },
                 {
                   quote: "El servicio post-venta es de primer nivel. Llevo mi Grand Vitara al taller autorizado y siempre me entregan el vehículo como nuevo. La atención y profesionalismo son inigualables.",
                   name: "María Rodríguez",
                   designation: "Propietaria de un Suzuki Grand Vitara",
-                  src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=800&auto=format&fit=crop",
+                  src: imgTestimonialMaria,
                 },
                 {
                   quote: "Compré mi Swift aquí y ha sido la mejor decisión. El proceso fue rápido, transparente y sin complicaciones. Ya estoy planeando mi segundo Suzuki con ellos.",
                   name: "Andrés Gutiérrez",
                   designation: "Propietario de un Suzuki Swift",
-                  src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=800&auto=format&fit=crop",
+                  src: imgTestimonialAndres,
                 },
               ]}
               autoplay
@@ -325,8 +322,8 @@ function App() {
                     </div>
                   </div>
 
-                  {/* Square Map */}
-                  <div className="w-full aspect-square border-4 border-gray-50 rounded-md shadow-xl overflow-hidden relative">
+                  {/* Map */}
+                  <div className="w-full aspect-[4/3] rounded-xl overflow-hidden relative shadow-lg">
                     <iframe 
                       src="https://maps.google.com/maps?q=10.5035191,-66.8736772&z=17&output=embed" 
                       className="w-full h-full border-0 absolute inset-0" 
@@ -416,9 +413,8 @@ function App() {
             </div>
           </div>
           
-          <div className="border-t border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+          <div className="border-t border-gray-800 pt-8 mt-8 flex justify-center items-center text-sm text-gray-500">
             <p>© {new Date().getFullYear()} Finest Cars Group - Suzuki La Florida. Todos los derechos reservados.</p>
-            <p className="mt-2 md:mt-0">Diseñado con ❤️ en Caracas.</p>
           </div>
         </div>
       </footer>
